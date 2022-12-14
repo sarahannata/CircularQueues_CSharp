@@ -62,5 +62,45 @@ namespace CircularQueues_CSharp
                     FRONT = FRONT + 1;
             }
         }
+        public void display()
+        {
+            int FRONT_position = FRONT;
+            int REAR_position = REAR;
+            /*checks if the queue is empty.*/
+            if (FRONT == -1)
+            {
+                Console.WriteLine("Queue is empty\n");
+                return;
+            }
+            Console.WriteLine("\nElements int the queue are...............\n");
+            if (FRONT_position <= REAR_position)
+            {
+                /*travers the queue till the last element present in an array. */
+                while (FRONT_position <= REAR_position)
+                {
+                    Console.Write(queue_array[FRONT_position] + "   ");
+                    FRONT_position++;
+                }
+                Console.WriteLine();
+            }
+            else
+            {
+                /*traverse the queue till the last poistion of the array.*/
+                while (FRONT_position <= max - 1)
+                {
+                    Console.Write(queue_array[FRONT_position] + "   ");
+                    FRONT_position++;
+                }
+                /* set the FRONT position to the first element of the array.*/
+                FRONT_position = 0;
+                /*traverses the array till the last element present in the queue.*/
+                while (FRONT_position <= REAR_position)
+                {
+                    Console.WriteLine(queue_array[FRONT_position] + "   ");
+                    FRONT_position++;
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
