@@ -138,6 +138,8 @@ namespace CircularQueues_CSharp
                                 q.display();
                             }
                             break;
+                        case '4':
+                            return;
                     }
                 }
                 catch (Exception e)
